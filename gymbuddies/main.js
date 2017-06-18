@@ -8,7 +8,7 @@ import Store from './src/store';
 
 import {
   WelcomeScreen, AuthScreen, FindAGymScreen,
-  FindAPartnerScreen, ReminderScreen
+  FindAPartnerScreen, ReminderScreen, AccountScreen
 } from './src/screens';
 
 
@@ -21,7 +21,8 @@ class App extends React.Component {
         screen: TabNavigator({
           find_gym: { screen: FindAGymScreen },
           find_partner: { screen: FindAPartnerScreen },
-          reminders: { screen: ReminderScreen }
+          reminders: { screen: ReminderScreen },
+          account: { screen: AccountScreen }
         }, {
           tabBarPosition: 'bottom',
         })
@@ -31,7 +32,7 @@ class App extends React.Component {
       lazy: true,
       animationEnabled: false,
     });
-    
+
     return (
       <Provider store={Store}>
         <MainNavigator />
