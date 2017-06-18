@@ -1,12 +1,41 @@
 import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Router from './src/Router';
+import { TabNavigator, StackNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
+
+import Store from './src/store';
+
+import {
+  WelcomeScreen, AuthScreen, FindAGymScreen,
+  FindAPartnerScreen, ReminderScreen
+} from './src/screens';
+
 
 class App extends React.Component {
   render() {
+    const MainNavigator = TabNavigator({
+      welcome: { screen: WelcomeScreen },
+      auth: { screen: AuthScreen },
+      main: {
+        screen: TabNavigator({
+          find_gym: { screen: FindAGymScreen },
+          find_partner: { screen: FindAPartnerScreen },
+          reminders: { screen: ReminderScreen }
+        }, {
+          tabBarPosition: 'bottom',
+        })
+      }
+
+    }, {
+      lazy: true,
+      animationEnabled: false,
+    });
+    
     return (
-      <Router />
+      <Provider store={Store}>
+        <MainNavigator />
+      </Provider>
     );
   }
 }
