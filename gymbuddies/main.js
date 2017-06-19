@@ -8,7 +8,9 @@ import Store from './src/store';
 
 import {
   WelcomeScreen, AuthScreen, FindAGymScreen,
-  FindAPartnerScreen, ReminderScreen, AccountScreen
+  FindAPartnerScreen, ReminderScreen, AccountScreen,
+  PartnerReviewScreen, HomeScreen, SettingsScreen,
+  AboutScreen,
 } from './src/screens';
 
 
@@ -17,12 +19,18 @@ class App extends React.Component {
     const MainNavigator = TabNavigator({
       welcome: { screen: WelcomeScreen },
       auth: { screen: AuthScreen },
-      main: {
+      mainFlow: {
         screen: TabNavigator({
-          find_gym: { screen: FindAGymScreen },
-          find_partner: { screen: FindAPartnerScreen },
-          reminders: { screen: ReminderScreen },
-          account: { screen: AccountScreen }
+          home: { screen: HomeScreen },
+          findPartner: { screen: FindAPartnerScreen },
+          review: { screen: PartnerReviewScreen },
+          account: {
+            screen: StackNavigator({
+              user: { screen: AccountScreen },
+              settings: { screen: SettingsScreen },
+              about: { screen: AboutScreen },
+            })
+          },
         }, {
           tabBarPosition: 'bottom',
         })

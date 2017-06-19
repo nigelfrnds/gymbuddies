@@ -1,16 +1,43 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { Card, List, ListItem } from 'react-native-elements';
+
+const options = [
+  {
+    title: 'Settings',
+    icon: 'settings',
+    route: 'settings',
+  },
+  {
+    title: 'About',
+    icon: 'info',
+    route: 'about',
+  },
+];
 
 class AccountScreen extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Account',
+
+  });
+
   render() {
     return (
       <View>
-        <Text>AccountScreen</Text>
-        <Text>AccountScreen</Text>
-        <Text>AccountScreen</Text>
-        <Text>AccountScreen</Text>
-        <Text>AccountScreen</Text>
-        <Text>AccountScreen</Text>
+        <Card>
+          <List>
+            {
+              options.map((item, i) => (
+                <ListItem
+                  key={i}
+                  title={item.title}
+                  leftIcon={{ name: item.icon }}
+                  onPress={() => this.props.navigation.navigate(item.route)}
+                />
+              ))
+            }
+          </List>
+        </Card>
       </View>
     );
   }
