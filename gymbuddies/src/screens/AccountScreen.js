@@ -4,6 +4,11 @@ import { Card, List, ListItem } from 'react-native-elements';
 
 const options = [
   {
+    title: 'Profile',
+    icon: 'account-circle',
+    route:'settings',
+  },
+  {
     title: 'Settings',
     icon: 'settings',
     route: 'settings',

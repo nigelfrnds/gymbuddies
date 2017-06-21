@@ -10,7 +10,7 @@ import {
   WelcomeScreen, AuthScreen, FindAGymScreen,
   FindAPartnerScreen, ReminderScreen, AccountScreen,
   PartnerReviewScreen, HomeScreen, SettingsScreen,
-  AboutScreen,
+  AboutScreen, ProfileScreen, WorkoutPlanScreen,
 } from './src/screens';
 
 
@@ -21,9 +21,20 @@ class App extends React.Component {
       auth: { screen: AuthScreen },
       mainFlow: {
         screen: TabNavigator({
-          home: { screen: HomeScreen },
+          home: {
+            screen: StackNavigator({
+              home: { screen: HomeScreen },
+              editWorkout: { screen: WorkoutPlanScreen },
+              reminders: { screen: ReminderScreen },
+            })
+          },
           findPartner: { screen: FindAPartnerScreen },
-          review: { screen: PartnerReviewScreen },
+          review: {
+            screen: StackNavigator({
+              review: { screen: PartnerReviewScreen },
+              profile: { screen: ProfileScreen },
+            })
+          },
           account: {
             screen: StackNavigator({
               user: { screen: AccountScreen },

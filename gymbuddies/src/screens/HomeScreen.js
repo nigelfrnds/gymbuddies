@@ -16,6 +16,13 @@ class HomeScreen extends Component {
               title='Edit Workout Schedule'
               large
               backgroundColor='#397af8'
+              onPress={() => this.props.navigation.navigate('editWorkout')}
+            />
+            <Button
+              title='Reminders'
+              large
+              backgroundColor='#397af8'
+              onPress={() => this.props.navigation.navigate('reminders')}
             />
           </View>
 

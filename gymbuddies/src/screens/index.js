@@ -8,3 +8,5 @@ export * from './PartnerReviewScreen';
 export * from './HomeScreen';
 export * from './SettingsScreen';
 export * from './AboutScreen';
+export * from './ProfileScreen';
+export * from './WorkoutPlanScreen';
