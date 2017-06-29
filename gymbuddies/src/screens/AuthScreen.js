@@ -4,8 +4,10 @@ import { FormLabel, FormValidationMessage,
   Card, SocialIcon, Button
 } from 'react-native-elements';
 
+import AuthComponent from '../components/AuthComponent';
+
 class AuthScreen extends Component {
-  state = { token: null, email: '' };
+  state = { token: null };
 
   async componentDidMount() {
     let token = await AsyncStorage.getItem('auth_token');
@@ -23,26 +25,7 @@ class AuthScreen extends Component {
         <View>
           <Card title='Sign Into Lifter'>
             <View>
-              <FormLabel>Email</FormLabel>
-              <TextInput
-                value={this.state.email}
-                maxLength={40}
-                onChangeText={(email) => this.setState({ email })}
-              />
-
-              <FormLabel>Password</FormLabel>
-              <TextInput
-                value={this.state.email}
-                maxLength={40}
-                onChangeText={(email) => this.setState({ email })}
-              />
-
-              <Button
-                title='Sign In'
-                backgroundColor='#397af8'
-                buttonStyle={styles.loginButtonStyle}
-                raised
-              />
+              <AuthComponent />
             </View>
 
             <SocialIcon

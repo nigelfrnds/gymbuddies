@@ -48,7 +48,7 @@ class PartnerReviewScreen extends Component {
                     avatar={{ uri: item.avatar_url }}
                     key={i}
                     title={item.name}
-                    onPress={() => navigation.navigate('profile', { user: item })}
+                    onPress={() => navigation.navigate('profile', { data: item })}
                   />
                 ))
               }
