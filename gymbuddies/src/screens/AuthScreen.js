@@ -5,6 +5,8 @@ import { FormLabel, FormValidationMessage,
 } from 'react-native-elements';
 
 import AuthComponent from '../components/AuthComponent';
+import { LifterLogo } from '../components/common';
+
 
 class AuthScreen extends Component {
   state = { token: null };
@@ -24,6 +26,9 @@ class AuthScreen extends Component {
       return (
         <View>
           <Card title='Sign Into Lifter'>
+            <View>
+              <LifterLogo />
+            </View>
             <View>
               <AuthComponent />
             </View>

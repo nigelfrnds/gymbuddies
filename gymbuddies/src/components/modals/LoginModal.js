@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Modal, View, Text, TextInput } from 'react-native';
+import { Modal, View, Text, TextInput, Image } from 'react-native';
 import { Card, FormLabel, Button } from 'react-native-elements';
+
+import { LifterLogo } from '../common';
 
 
 class LoginModal extends Component {
@@ -17,6 +19,7 @@ class LoginModal extends Component {
       >
         <View>
           <Card title='Sign With Email'>
+            <LifterLogo />
             <View>
               <FormLabel>Email</FormLabel>
               <TextInput
@@ -50,5 +53,7 @@ class LoginModal extends Component {
     );
   }
 }
+
+
 
 export default LoginModal;
