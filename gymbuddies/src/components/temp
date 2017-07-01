@@ -1,0 +1,37 @@
+<View>
+  <View>
+    <View style={styles.inputContainerStyle}>
+      <FormLabel>Email</FormLabel>
+      <Field
+        name='email'
+        component={renderInput}
+        type='email'
+        placeholder='Email'
+      />
+    </View>
+
+    <View style={styles.inputContainerStyle}>
+      <FormLabel>Password</FormLabel>
+      <Field
+        name='password'
+        component={renderInput}
+        type='email'
+        placeholder='Email'
+      />
+    </View>
+
+    <View>
+      <Button
+        title='Sign In'
+        backgroundColor='#397af8'
+        onPress={handleSubmit(submit)}
+      />
+
+      <Button
+        title='Cancel'
+        backgroundColor='#397af8'
+        onPress={onCancel}
+      />
+    </View>
+  </View>
+</View>

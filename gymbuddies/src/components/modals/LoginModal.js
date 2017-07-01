@@ -3,6 +3,7 @@ import { Modal, View, Text, TextInput, Image } from 'react-native';
 import { Card, FormLabel, Button } from 'react-native-elements';
 
 import { LifterLogo } from '../common';
+import LoginForm from '../LoginForm';
 
 
 class LoginModal extends Component {
@@ -18,33 +19,15 @@ class LoginModal extends Component {
         onRequestClose={() => {}}
       >
         <View>
+        <LifterLogo />
+        </View>
+        
+        <View>
           <Card title='Sign With Email'>
-            <LifterLogo />
             <View>
-              <FormLabel>Email</FormLabel>
-              <TextInput
-                value={this.state.email}
-                maxLength={40}
-                onChangeText={(email) => this.setState({ email })}
-              />
-
-              <FormLabel>Password</FormLabel>
-              <TextInput
-                value={this.state.pass}
-                maxLength={40}
-                onChangeText={(pass) => this.setState({ pass })}
-              />
-
-              <Button
-                title='Sign In'
-                backgroundColor='#397af8'
-                onPress={onAccept}
-              />
-
-              <Button
-                title='Cancel'
-                backgroundColor='#397af8'
-                onPress={onCancel}
+              <LoginForm
+                onAccept={onAccept}
+                onCancel={onCancel}
               />
             </View>
           </Card>

@@ -25,10 +25,11 @@ class AuthScreen extends Component {
     if(!this.state.token) {
       return (
         <View>
-          <Card title='Sign Into Lifter'>
-            <View>
-              <LifterLogo />
-            </View>
+          <View>
+            <LifterLogo />
+          </View>
+
+          <Card title='Sign In To Use Lifter'>
             <View>
               <AuthComponent />
             </View>
